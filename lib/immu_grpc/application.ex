@@ -13,9 +13,10 @@ defmodule ImmuGrpc.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: ImmuGrpc.PubSub},
       # Start the Endpoint (http/https)
-      ImmuGrpcWeb.Endpoint
+      ImmuGrpcWeb.Endpoint,
       # Start a worker by calling: ImmuGrpc.Worker.start_link(arg)
       # {ImmuGrpc.Worker, arg}
+      ImmuGrpc.ImmudbHandler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
