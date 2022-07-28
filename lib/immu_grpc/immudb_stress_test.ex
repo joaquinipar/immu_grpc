@@ -26,6 +26,13 @@ defmodule ImmuGrpc.ImmudbStressTest do
 
     :ok
   end
+  
+  
+  def fill_hundred_million_records() do
+    Enum.each(0..100_000_000, fn(x) -> x |> Integer.to_string() |> ImmuGrpc.ImmudbHandler.set("stress_test") end)
+
+    :ok
+  end
 
   defp set_number(x) when is_number(x) do
     x
